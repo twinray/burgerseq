@@ -1,5 +1,24 @@
+module.exports = function(sequelize, DataTypes){
+
+  var Burgerseq = sequelize.define("BurgerSeq", {
+    burger_name: DataTypes.STRING,
+    devoured: DataTypes.BOOLEAN
+  });
+  // why return? we would of created it but not returning it
+  // it completes the process 
+  // ending it and passing it back 
+  return Burgerseq;
+}
+
+
+
+
+
+
+
+
 // Import the ORM to implement functions that will interact with the database
-var orm = require('../config/orm.js');
+/**var orm = require('../config/orm.js');
 // give burgers properties
 // each of these burger // 
 // separation of concerns
@@ -43,4 +62,4 @@ var burger = {
 };
 
 // Export the database functions for the controller (burgerController.js).
-module.exports = burger;
+module.exports = burger;**/

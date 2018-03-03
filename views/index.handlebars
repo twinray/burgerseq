@@ -10,9 +10,13 @@
         {{#each burgers}}
           {{#unless this.devoured}}
             <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+              <form action="/burgers/{{this.id}}?_method=put" method="POST">
                 <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
               </form>
+              {{!-- <form action="/burgers/add" method="POST">
+                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+              </form> method put not post take question mark out, handle put request in the controller, /burgers/:id
+              then the controller calls a model and the model updates--}}
             </div>
           {{/unless}}
         {{/each}}
@@ -37,7 +41,7 @@
 
 <div class="row">
   <div class="col s12">
-    <form action="/burgers" method="POST">
+    <form action="/burgers/add" method="POST">
       <input type="text" id="name" name="burger_name" placeholder="Yummy Burger">
       <button type="submit" class="addBurgerButton">Add A Burger</button>
     </form>
